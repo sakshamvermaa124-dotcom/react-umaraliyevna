@@ -19,7 +19,7 @@ export default function Survey() {
 		opinion: "",
 	})
 
-	function handleChange(e: any) {
+	function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
 		const { name, value } = e.target
 
 		setFormData((prev) => ({
@@ -28,11 +28,10 @@ export default function Survey() {
 		}))
 	}
 
-	function handleSubmit(e: any) {
+	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault()
 
 		console.log(formData)
-
 		setSubmitted(true)
 	}
 
